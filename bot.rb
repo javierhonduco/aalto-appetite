@@ -2,25 +2,33 @@ require './app.rb'
 require 'telegram/bot'
 
 token = ENV['APPETITE_TELEGRAM_TOKEN']
+restaurants = ENDPOINTS.keys
+
+def stringify result
+  result * "\n"
+end
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     case message
     when Telegram::Bot::Types::InlineQuery
-      results = [
-        [3, 'CS', get_menu('cs').to_s],
-        [4, 'Alvari', get_menu('alvari').to_s]
-      ].map do |arr|
+      results = restaurants.map do |rest|
         Telegram::Bot::Types::InlineQueryResultArticle.new(
-          id: arr.first,
-          title: arr[1],
-          input_message_content: Telegram::Bot::Types::InputTextMessageContent.new(message_text: arr[2])
+          id: rand(0..999999999999),
+          title: rest,
+          input_message_content: Telegram::Bot::Types::InputTextMessageContent.new(
+            message_text: "Menu @#{rest}:\n#{stringify(get_menu(rest))}"
+          )
         )
       end
 
-      bot.api.answer_inline_query(inline_query_id: message.id, results: results)
+      bot.api.answer_inline_query(
+        inline_query_id: message.id,
+        results: results,
+        cache_time: 0
+      )
     when Telegram::Bot::Types::Message
-      bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}!")
+      bot.api.send_message(chat_id: message.chat.id, text: 'Hello there!')
     end
   end
 end
