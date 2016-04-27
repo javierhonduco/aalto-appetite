@@ -39,9 +39,10 @@ def parse_amica url
   }
 end
 
-def get_menu cafeteria
-  endpoint = ENDPOINTS[cafeteria]
-  result = case STRATEGIES[cafeteria]
+def get_menu cafe
+  cafe = cafe.to_sym
+  endpoint = ENDPOINTS[cafe]
+  case STRATEGIES[cafe]
     when :sodexo_json
       parse_sodexo(endpoint)
     when :amica_parsing
@@ -49,6 +50,4 @@ def get_menu cafeteria
     when :taffa_parsing
       parse_taffa(endpoint)
   end
-
-  result
 end

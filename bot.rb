@@ -8,8 +8,8 @@ Telegram::Bot::Client.run(token) do |bot|
     case message
     when Telegram::Bot::Types::InlineQuery
       results = [
-        [3, 'CS', get_menu('cs'.to_sym).to_s],
-        [4, 'Alvari', get_menu('alvari'.to_sym).to_s]
+        [3, 'CS', get_menu('cs').to_s],
+        [4, 'Alvari', get_menu('alvari').to_s]
       ].map do |arr|
         Telegram::Bot::Types::InlineQueryResultArticle.new(
           id: arr.first,
