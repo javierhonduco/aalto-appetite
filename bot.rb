@@ -1,5 +1,6 @@
 require './app.rb'
 require 'telegram/bot'
+require 'securerandom'
 
 token = ENV['APPETITE_TELEGRAM_TOKEN']
 restaurants = ENDPOINTS.keys
@@ -13,8 +14,8 @@ Telegram::Bot::Client.run(token) do |bot|
     case message
     when Telegram::Bot::Types::InlineQuery
       results = restaurants.map do |rest|
-        Telegram::Bot::Types::InlineQueryResultArticle.new(
-          id: rand(0..999999999999),
+        inline = Telegram::Bot::Types::InlineQueryResultArticle.new(
+          id: SecureRandom.uuid,
           title: rest,
           input_message_content: Telegram::Bot::Types::InputTextMessageContent.new(
             message_text: "Menu @#{rest}:\n#{stringify(get_menu(rest))}"
