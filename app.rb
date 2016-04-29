@@ -1,12 +1,17 @@
 require 'httparty'
 require 'nokogiri'
 
+t = Time.now
+year = t.year
+month = t.month
+day = t.day
+
 ENDPOINTS = {
   :taffa => 'https://www.teknologforeningen.fi/?lang=en',
   :alvari => 'http://www.amica.fi/modules/json/json/Index?costNumber=0190&language=en',
   :tuas => 'http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=en',
-  :cs => 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/2016/04/26/fi',
-  :valimo => 'http://www.sodexo.fi/ruokalistat/output/daily_json/13918/2016/04/26/fi'
+  :cs => "http://www.sodexo.fi/ruokalistat/output/daily_json/142/#{year}/#{month}/#{day}/fi",
+  :valimo => "http://www.sodexo.fi/ruokalistat/output/daily_json/13918/#{year}/#{month}/#{day}/fi"
 }
 
 STRATEGIES = {
