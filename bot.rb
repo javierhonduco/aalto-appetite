@@ -9,7 +9,7 @@ WELCOME_MSG = "Hi there!
 Write my username and select the restaurant you want.
 Created with <3 by @javierhonduco"
 
-def stringify result
+def stringify(result)
   result * "\n"
 end
 

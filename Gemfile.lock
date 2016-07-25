@@ -12,20 +12,20 @@ GEM
     equalizer (0.0.11)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    httparty (0.13.7)
-      json (~> 1.8)
+    httparty (0.14.0)
       multi_xml (>= 0.5.2)
     ice_nine (0.11.2)
-    json (1.8.3)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
-    telegram-bot-ruby (0.5.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    nokogiri (1.6.8.1-java)
+    telegram-bot-ruby (0.6.0.1)
       faraday
       virtus
     thread_safe (0.3.5)
+    thread_safe (0.3.5-java)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -33,6 +33,7 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
@@ -41,4 +42,4 @@ DEPENDENCIES
   telegram-bot-ruby
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
