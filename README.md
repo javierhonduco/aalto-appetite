@@ -1,4 +1,4 @@
-## aalto cafeterias telegram bot
+## Aalto University cafeteria telegram bot
 
 #### Running the bot
 Clone the repo:
@@ -10,11 +10,13 @@ Install the dependencies
 $ bundle install
 ```
 Run it:
-``bash
+```bash
 $ APPETITE_TELEGRAM_TOKEN=<your_telegram_token> bundle exec ruby bot.rb
 ```
 
 #### How does it look
+![image](https://cloud.githubusercontent.com/assets/959128/19230152/357568de-8ed3-11e6-8fa1-1254628ff6da.png)
 
+![image](https://cloud.githubusercontent.com/assets/959128/19230207/8da463fc-8ed3-11e6-9b1c-c30d0e504df9.png)
 
 
