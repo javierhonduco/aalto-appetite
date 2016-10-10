@@ -18,7 +18,7 @@
 When you type the bot's name, it displays the restaurant list.
 ![image](https://cloud.githubusercontent.com/assets/959128/19230152/357568de-8ed3-11e6-8fa1-1254628ff6da.png)
 
-Simply chose one, and you will get the menu back :tada:
+Just choose one, and you will get the current menu back! :tada:
 
 ![image](https://cloud.githubusercontent.com/assets/959128/19230207/8da463fc-8ed3-11e6-9b1c-c30d0e504df9.png)
 
